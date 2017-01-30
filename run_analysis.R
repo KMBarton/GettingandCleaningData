@@ -40,7 +40,7 @@ jointdf$activity[jointdf$activity ==6] <- "LAYING"
 
 melted <-  melt(jointdf, id = c("subject", "activity"))
 tidyds <- dcast(melted, subject + activity ~ variable, mean)
-write.csv(tidyds, file ="./Rdata/tidyds.csv")
+write.table(tidyds, file ="./Rdata/tidyds.txt", row.name = FALSE)
 
 
 
